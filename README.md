@@ -16,7 +16,7 @@ We propose a web application, GestureGo, which will facilitate bidirectional com
 
 ## Flowchart
 
-![Flowchart](Docs/images/Flowchart.jpg)
+![Flowchart](docs/images/Flowchart.jpg)
 
 ## Tech stack
 
