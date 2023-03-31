@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+
+    <div id="login" class="form" data-aos="zoom-in-up" data-aos-duration="12000">
+        <h2> Login</h2>
+
+        {% comment %} <% if(msg) { %>
+            <h3 style="color: #17b978;" class="text-center"><%=msg%></h3><br>
+        <%   } %>
+        <% if(err) { %>
+          <h3 style="color: #ff304f;" class="text-center"><%=err%></h3><br>
+        <%   } %> {% endcomment %}
+
+        <form method="POST" action="/login">
+            
+            <div class="input">
+                <div class="inputBox">
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="inputBox">
+                    <label>Password</label>
+                    <input type="password" name="pass" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Login" class="btn btn-info btn-lg">
+                </div>
+            </div>
+        </form>
+            <p class="forget">Don't have an account? <a href="/signup">Sign Up</a></p>
+            {% comment %} <p class="forget"><a href="/admin">Administrator Login</a></p> {% endcomment %}
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+</body>
+
+</html>

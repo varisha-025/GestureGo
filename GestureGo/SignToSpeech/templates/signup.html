@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    < <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    
+    <div id="login" class="form" data-aos="zoom-in-up" data-aos-duration="12000">
+        <h2> SignUp</h2>
+
+        <form action="/createaccount" method="POST">
+            <div class="input">
+                <div class="inputBox">
+                    <label>User Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="User Name" required>
+                </div>
+                <div class="inputBox">
+                    <label>Email Address</label>
+                    <input type="email" name="mail" class="form-control" placeholder="Email Address" required>
+                    
+                </div>
+                <div class="inputBox">
+                    <label>Phone number</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Phone number" required>
+                </div>
+                <div class="inputBox">
+                    <label>Password</label>
+                    <input type="password" name="pass" class="form-control" placeholder="password" required>
+                <div class="inputBox">
+                <div class="inputBox">
+                    <label>Re-enter Password</label>
+                    <input type="password" name="con_pass" class="form-control" placeholder="password" required>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3">
+                </div>
+            </div>
+        </form>
+        <p class="forget" style="text-align: center;">Already have an account? <a href="/login">Log In</a></p>
+        {% comment %} <p class="forget" style="text-align: center;"><a href="/admin">Administrator Login</a></p> {% endcomment %}
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
