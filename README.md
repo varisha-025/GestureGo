@@ -12,7 +12,11 @@ When over 1.5 billion people suffer from hearing loss around the world, deaf sig
 
 ## Solution
 
-We propose an application, GestureGo, which will facilitate bidirectional communication between people with hearing or speech impairments and other people which in turn will lessen the communication gap between them and allowing everyone to understand and be understood.
+We propose a web application, GestureGo, which will facilitate bidirectional communication between people with hearing or speech impairments and other people which in turn will lessen the communication gap between them and allowing everyone to understand and be understood.
+
+## Flowchart
+
+![Flowchart](docs/images/flowchart.jpg)
 
 ## Tech stack
 
@@ -53,7 +57,6 @@ Create an OAuth2 Client
 - Create a new file named: `.env` and
   copy all the content from the respective `.env.template` files.
 - Run `docker compose up` to start
-
 
 ## Want to contribute?
 
