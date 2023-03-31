@@ -104,6 +104,7 @@ google-measurement-protocol==1.1.0
 google-pasta==0.2.0
 google-resumable-media==2.3.3
 googleapis-common-protos==1.56.2
+googletrans==4.0.0rc1
 graphene==3.1
 graphene-django==2.0.0
 graphene-permissions==1.1.4
@@ -172,6 +173,7 @@ protobuf==3.20.1
 psycopg2==2.9.3
 psycopg2-binary==2.9.3
 py==1.11.0
+python-dotenv==1.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pybars3==0.9.7
