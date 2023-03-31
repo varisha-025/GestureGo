@@ -1,29 +1,18 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
+{% block start %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
 
     <div id="login" class="form" data-aos="zoom-in-up" data-aos-duration="12000">
         <h2> Login</h2>
-
-        {% comment %} <% if(msg) { %>
-            <h3 style="color: #17b978;" class="text-center"><%=msg%></h3><br>
-        <%   } %>
-        <% if(err) { %>
-          <h3 style="color: #ff304f;" class="text-center"><%=err%></h3><br>
-        <%   } %> {% endcomment %}
 
         <form method="POST" action="/login">
             
@@ -51,5 +40,4 @@
     </script>
 
 </body>
-
-</html>
+{% endblock start %}
