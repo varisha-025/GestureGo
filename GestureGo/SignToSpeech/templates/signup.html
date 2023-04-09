@@ -14,10 +14,12 @@
 </head>
 <body>
     
-    <div id="login" class="form" data-aos="zoom-in-up" data-aos-duration="12000">
+    <div id="login" class="form" data-aos="zoom-in-up" data-aos-duration="12000" >
         <h2> SignUp</h2>
+        
 
-        <form action="/createaccount" method="POST">
+        <form action="/" method="POST">
+            {% csrf_token %}
             <div class="input">
                 <div class="inputBox">
                     <label>User Name</label>
@@ -41,8 +43,17 @@
                     <input type="password" name="con_pass" class="form-control" placeholder="password" required>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3">
-                </div>
+                    <input type="submit" value="Create Account"  class="btn btn-info btn-lg mt-3">                   
+                </div> 
+                <a href="/privacy" class="text-white">Terms and condition</a>
+                {% comment %} <div class="inputBox">
+                    <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3"
+                        onclick="window.location.href='privacy.html';">
+                </div> {% endcomment %}
+                
+                
+                
+                
             </div>
         </form>
         <p class="forget" style="text-align: center;">Already have an account? <a href="/login">Log In</a></p>

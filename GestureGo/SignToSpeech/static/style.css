@@ -75,3 +75,7 @@
   .forget a {
     color: #ff0047;
   }
+  a[href='/privacy'] {
+    color: white;
+  }
+  
