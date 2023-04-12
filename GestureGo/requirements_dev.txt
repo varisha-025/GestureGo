@@ -1,0 +1,9 @@
+python-dotenv==1.0.0
+psycopg2==2.9.6
+psycopg2-binary==3.1.8
+postgresql==4.0
+googletrans==3.0.0
+pyttsx3==2.90
+SpeechRecognition==3.10.0
+gTTS==2.3.1
+PyAudio==0.2.13
