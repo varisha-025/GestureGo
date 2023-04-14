@@ -91,6 +91,24 @@ a:hover {
       <h2>Changes to Privacy Policy</h2>
       <p>We may update this Privacy Policy from time to time. If we make any material changes,
         we will notify you by posting the updated Privacy Policy on our website.</p>
+        <div class="container">
+          <!-- Privacy Policy content -->
+        
+          <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="flex items-center">
+              <input type="checkbox" id="agree" name="agree" required>
+              <label for="agree">I agree to the Privacy Policy</label>
+            </div>
+            <div class="mt-4">
+              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Accept
+              </button>
+            </div>
+          </form>
+          
+        </div>
+        
         
         </div>
         

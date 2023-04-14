@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 
-from .utils.googletranslate import GoogleTranslate
+# from .utils.googletranslate import GoogleTranslate
 
 
 @login_required(login_url='login')
