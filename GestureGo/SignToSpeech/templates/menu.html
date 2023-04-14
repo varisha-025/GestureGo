@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block start %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style>
+     
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        
+        min-height: 100vh;
+        background:#ccfbf1;
+        font-family: 'Roboto', sans-serif;
+      }
+     
+      
+    </style>
+  </head>
+  <body  >
+    <div class="container  ">
+      <div class = " text-center "> 
+        <div class=" w-96 ms-[34.5rem] mt-56 py-10 ">
+          
+          <a
+            href="/signtospeech"
+            class=" flex justify-center rounded-full w-full bg-stone-200 cursor-pointer rounded-lg shadow-[0_4px_9px_-4px_#3b71ca] p-4 transition duration-400 hover:bg-neutral-100 hover:text-neutral-500 hover:font-bold focus:bg-neutral-100 focus:text-neutral-500 focus:ring-0 dark:hover:bg-neutral-600 dark:hover:text-neutral-200 dark:focus:bg-neutral-600 dark:focus:text-neutral-200">
+            Sign to Speech
+          </a>
+          <a
+            href="#!"
+            class="flex justify-center w-full mt-12 bg-stone-400 cursor-pointer rounded-lg shadow-[0_4px_9px_-4px_#3b71ca] p-4 transition duration-400 hover:bg-neutral-100 hover:text-neutral-500 hover:font-bold focus:bg-neutral-100 focus:text-neutral-500 focus:ring-0 dark:hover:bg-neutral-600 dark:hover:text-neutral-200 dark:focus:bg-neutral-600 dark:focus:text-neutral-200">
+           Speech to Sign 
+          </a>
+          <a
+            href="#!"
+            class="flex justify-center mt-12 cursor-pointer bg-stone-600 rounded-lg shadow-[0_4px_9px_-4px_#3b71ca] p-4 transition duration-400 hover:bg-neutral-100 hover:font-bold hover:text-neutral-500 focus:bg-neutral-100 focus:text-neutral-500 focus:ring-0 dark:hover:bg-neutral-600 dark:hover:text-neutral-200  dark:focus:bg-neutral-600 dark:focus:text-neutral-200">
+            ASL Chart
+          </a>
+        </div>
+      
+      
+    </div>
+        
+  </body>
+  </html>
+  {% endblock start %}
+ 

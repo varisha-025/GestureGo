@@ -9,14 +9,15 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #131419;
+    background: #bcfdf7;
+    font-family: 'Roboto', sans-serif;
   }
   .form {
     position: relative;
     width: 350px;
     padding: 40px 40px 60px;
     border-radius: 10px;
-    background: #131419;
+    background: #ffffff;
     text-align: center;
     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
       5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -78,4 +79,4 @@
   a[href='/privacy'] {
     color: white;
   }
-  
+ 

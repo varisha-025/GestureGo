@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block start %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign to Speech</title>
+    <style>
+        * {
+            background:cyan-50;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #main__main-container {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 100vh;   
+        }
+        
+        #main__video {
+            margin-top:-105px;
+            max-width: 536px;
+        }
+        
+        #main__video-button {
+            background-color: gainsboro;
+            height: 50px;
+            width: 95px;
+            margin-top: -305px;
+            border-radius: 20%;
+            text-align: center;
+            
+            line-height: 50px;
+            transition-property: box-shadow;
+            transition-duration: .3s;
+            font-size:;
+        }
+        
+        #main__video-button:hover {
+            cursor: pointer;
+            box-shadow: gray 0 0 10px 10px;
+            transition-property: box-shadow;
+            transition-duration: .3s;
+            font-weight: 600;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div id="main__main-container">
+
+        <video id="main__video" playsinline autoplay loop>Can't load video :</video>
+
+        <div id="main__video-button" class="">Record</div>
+        
+
+    </div>
+
+    <script src="./script.js"></script>
+	
+	</video>
+</div>
+        <script>
+            const videoButton = document.getElementById('main__video-button');
+const video = document.getElementById('main__video');
+
+let mediaRecorder;
+
+async function init() {
+
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+        });
+        startWebcam(stream);
+    } catch (err) {
+        console.log('Error retrieving a media device.');
+        console.log(err);
+    }
+}
+
+function startWebcam(stream) {
+    window.stream = stream;
+    video.srcObject = stream;
+}
+
+videoButton.onclick = () => {
+
+    switch (videoButton.textContent) {
+        case 'Record':
+            startRecording();
+            videoButton.textContent = 'Stop';
+            break;
+        case 'Stop':
+            videoButton.textContent = 'Record';
+            mediaRecorder.stop();
+            break;
+    }
+
+}
+
+function startRecording() {
+    if (video.srcObject === null) {
+        video.srcObject = window.stream;
+    }
+    mediaRecorder = new MediaRecorder(window.stream, {mimeType: 'video/webm;codecs=vp9,opus'});
+    mediaRecorder.start();
+    mediaRecorder.ondataavailable = recordVideo;
+}
+
+function recordVideo(event) {
+    if (event.data && event.data.size > 0) {
+        video.srcObject = null;
+        let videoUrl = URL.createObjectURL(event.data);
+        video.src = videoUrl;
+    }
+}
+
+function stopRecording() {
+    mediaRecorder.stop();
+}
+
+init();
+        </script>
+          </body>
+        </html>
+        {% endblock start %}
+        

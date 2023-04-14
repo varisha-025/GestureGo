@@ -73,9 +73,14 @@ def home(request):
 
 
 
+def menu(request):
+    return render(request, 'menu.html')
 
 def privacy(request):
     return render(request,'privacy.html')
 def logout(request):
     pass
     # return render(request, 'logout.html')
+
+def signtospeech(request):
+    return render(request, 'signtospeech.html')
