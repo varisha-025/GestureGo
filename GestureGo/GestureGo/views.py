@@ -1,15 +1,13 @@
-from django.shortcuts import render
-from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.shortcuts import redirect, render
 
 
 def registerUser(request):
     if request.user.is_authenticated:
-        print("REDERICETED")
         return redirect('/')
     else:
         if request.method == 'POST':
@@ -19,10 +17,10 @@ def registerUser(request):
             email = request.POST.get('email')
             user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
+            messages.success(request, 'Account was created for ' + username)
             if form.is_valid():
                 form.save()
                 username = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for ' + username)
             return redirect('login')
         else:
             form = UserCreationForm()
@@ -38,7 +36,7 @@ def loginUser(request):
             username= request.POST.get("username")
             password= request.POST.get("password")
             user_exist = User.objects.filter(username=username).exists()
-            print(user_exist)
+    
             user = authenticate(request,username=username, password=password)
             if user is not None and user_exist:
                 login(request,user)
@@ -47,15 +45,16 @@ def loginUser(request):
                 messages.error(request, 'Wrong username or password')
                 return render(request,'login.html')
         return render(request,'login.html')
+    
 
-@login_required(login_url='login')
+
 def home(request):
     return render(request, 'home.html')
-
 
 def privacy(request):
     return render(request,'privacy.html')
 
+@login_required(login_url='login')
 def logoutUser(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
