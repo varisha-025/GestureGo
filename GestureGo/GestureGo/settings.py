@@ -91,6 +91,7 @@ WSGI_APPLICATION = 'GestureGo.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

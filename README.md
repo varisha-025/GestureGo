@@ -21,10 +21,10 @@ We propose a web application, GestureGo, which will facilitate bidirectional com
 ## Tech stack
 
 - **FrontEnd:** [Django](https://www.djangoproject.com/) and [Tailwind CSS](https://tailwindcss.com/)
-- **API:** [Django Rest Framework](https://www.django-rest-framework.org/) for the API ([Python](https://www.python.org/))
+<!-- - **API:** [Django Rest Framework](https://www.django-rest-framework.org/) for the API ([Python](https://www.python.org/)) -->
 - **Database:** [PostgreSQL]()
-- **Other libraries:** [Tensorflow](https://www.tensorflow.org/), Pyaudio, PIL, Google Cloud Translator API
-- **Cloud:** [Google Cloud](https://cloud.google.com/)
+- **Other libraries:** [Tensorflow](https://www.tensorflow.org/), Pyaudio, Docker, Google Cloud Translator API
+- **Cloud:** [AWS EC2]()
 - **Version Control and Hosting:** [Git](https://git-scm.com/) for Source Code Management and [Netlify](https://netlify.com) for hosting
 
 ## Prerequisites for Setup
@@ -47,8 +47,6 @@ Create an OAuth2 Client
 
 - Fork and clone the repository.
 - Add remote upstream `git remote add upstream https://github.com/varisha-025/GestureGo`
-<!-- - [ui setup](https://github.com/BitByte-TPC/gymkhana/tree/master/ui#readme)
-- [api setup](https://github.com/BitByte-TPC/gymkhana/tree/master/api#readme) -->
 
 ## Setup using Docker
 
