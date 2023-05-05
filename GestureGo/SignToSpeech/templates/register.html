@@ -101,7 +101,8 @@
           
           
           a[href='/privacy'] {
-            color: white;
+            margin: 10px;
+            color: black;
           }
          
     </style>
@@ -136,18 +137,13 @@
                     <label></label>
                     <input type="password" name="con_pass" class="form-control" placeholder="re-enter password" required>
                 </div>
-                <div class="inputBox">
-                    <input type="submit" value="Create Account"  class="btn btn-info btn-lg mt-3">                   
-                </div> 
-                <a href="/privacy" class="text-white">Terms and condition</a>
                 {% comment %} <div class="inputBox">
-                    <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3"
-                        onclick="window.location.href='privacy.html';">
-                </div> {% endcomment %}
-                
-                
-                
-                
+                    <input type="submit" value="Create Account"  class="btn btn-info btn-lg mt-3">                   
+                </div>  {% endcomment %}
+                <a href="/privacy" class="my-4 text-black">Terms and condition</a>
+                <div class="inputBox">
+                <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3">
+                </div> 
             </div>
         </form>
         <p class="forget text-align: center ">Already have an account? <a class = "hover:font-semibold  focus:font-semibold" href="/login">Log In</a></p>
