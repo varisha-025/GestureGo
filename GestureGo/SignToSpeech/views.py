@@ -52,7 +52,7 @@ def loginUser(request):
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'signtospeech.html')
 
 def privacy(request):
     return render(request,'privacy.html')
@@ -63,15 +63,14 @@ def logoutUser(request):
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("login")
 
-@login_required(login_url='login')
-def dashboard(request):
-    return render(request,'sign_to_speech/dashboard.html')
 
 @login_required(login_url='login')
 def prediction(request):
     return JsonResponse({"message": "ok"})
 
 
+def menu(request):
+    return render(request, 'menu.html')
 
 
 
@@ -90,14 +89,5 @@ def prediction(request):
 
 # Create your views here.
 
-def home(request):
-    return render(request, 'home.html')
-
-
-
-
 def privacy(request):
     return render(request,'privacy.html')
-def logout(request):
-    pass
-    # return render(request, 'logout.html')
