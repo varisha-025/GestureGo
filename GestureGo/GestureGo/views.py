@@ -50,6 +50,8 @@ def loginUser(request):
 
 def home(request):
     return render(request, 'home.html')
+def homeNative(request):
+    return render(request, 'homeNative.html')
 
 def privacy(request):
     return render(request,'privacy.html')

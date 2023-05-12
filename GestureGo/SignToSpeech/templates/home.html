@@ -1,6 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!DOCTYPE html>
 
-HOME PAGE
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>GestureGo</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Audible</header>
+      <form action="#">
+        <div class="row">
+          <label>Text detected</label>
+          <textarea id="detected-textarea"></textarea>
+          <script>
+            function convertText() {
+              const fromText = document.querySelector('.from-text');
+              const detectedTextarea = document.querySelector('#detected-textarea');
+              detectedTextarea.value = fromText.value;
+            }
+            </script>
+            
+        </div>
+        <div class="row">
+          <label>Select Voice</label>
+          <div class="outer">
+            <select></select>
+          </div>
+        </div>
+        <button>Convert To Speech</button>
+        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="{% url 'homeNative' %}">Convert to your native language</a>
+
+
+
+      </form>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'script1.js' %}"></script>
+
+  </body>
+</html>
+
 {% endblock %}
