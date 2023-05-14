@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 {% load static %}
 {% block start %}
 
@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         * {
@@ -22,7 +21,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: 95vh;
             background: #ccfbf1;
             font-family: 'Roboto', sans-serif;
           }
@@ -94,17 +93,7 @@
             margin-top:20px;
             color: black;
           }
-          register a {
-            
-            color: #e11d48;
-          }
-          
-          
-          a[href='/privacy'] {
-            margin: 10px;
-            color: black;
-          }
-         
+ 
     </style>
 </head>
 <body>
@@ -131,19 +120,21 @@
                 </div>
                 <div class="inputBox">
                     <label></label>
-                    <input type="password" name="pass" class="form-control" placeholder="password" required>
-                <div class="inputBox">
+                    <input type="password" name="pass" class="form-control" placeholder="Password" required>
+                </div>
                 <div class="inputBox">
                     <label></label>
-                    <input type="password" name="con_pass" class="form-control" placeholder="re-enter password" required>
+                    <input type="password" name="con_pass" class="form-control" placeholder="Re-enter password" required>
                 </div>
-                {% comment %} <div class="inputBox">
-                    <input type="submit" value="Create Account"  class="btn btn-info btn-lg mt-3">                   
-                </div>  {% endcomment %}
-                <a href="/privacy" class="my-4 text-black">Terms and condition</a>
+
+                <br>
+                <a href={% url 'privacy' %} id="privacy">Privacy Policy</a>
+              
+                
                 <div class="inputBox">
                 <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3">
                 </div> 
+                
             </div>
         </form>
         <p class="forget text-align: center ">Already have an account? <a class = "hover:font-semibold  focus:font-semibold" href="/login">Log In</a></p>

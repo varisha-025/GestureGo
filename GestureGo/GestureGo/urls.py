@@ -15,15 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import RedirectView
 
 from . import views
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/login', permanent=False)),
+    
     path('admin/', admin.site.urls),
     path('home/',views.home,name="home"),
+   
+    path('translation/',views.translation,name="translation"),
+    path('menu/', views.menu, name='menu'),
+    path('home/signtospeech/',include('SignToSpeech.urls')),
+    path('text_to_speech/',views.text_to_speech,name="text_to_speech"),
+
     path('login/',views.loginUser,name="login"),
     path('logout/',views.logoutUser,name="logout"),
     path('register/',views.registerUser,name="register"),
     path('privacy/',views.privacy,name="privacy"),
-    path('home/signtospeech/',include('SignToSpeech.urls')),
+    
 ]

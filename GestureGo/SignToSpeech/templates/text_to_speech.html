@@ -1,0 +1,40 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>GestureGo</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Convert text to speech</header>
+      <form action="#">
+        <div class="row">
+          <label>Text detected</label>
+          <textarea id="detected-textarea"></textarea>
+          <script>
+            
+          </script>
+
+        </div>
+        <div class="row">
+          <label>Select Voice</label>
+          <div class="outer">
+            <select></select>
+          </div>
+        </div>
+        <button class="speech-btn" >Convert to Speech</button>
+        <a class="inline-block align-baseline my-5 font-bold text-sm text-black-500 hover:text-blue-800 native" href="{% url 'translation' %}">Translate to your native language</a>
+
+      </form>
+    </div>
+
+    <script src="{% static 'js/text_to_speech.js' %}"></script>
+
+  </body>
+</html>

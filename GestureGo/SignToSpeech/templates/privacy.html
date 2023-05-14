@@ -1,64 +1,70 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Privacy Policy - Gesture Go</title>
+    
+    <head>
+      <title>Privacy Policy - Gesture Go </title>
     <style>
-    /* CSS styling for the Privacy Policy page */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
-}
+        /* CSS styling for the Privacy Policy page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
 
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
+    .acceptBtn {
+      margin-top: 20px;
+    }
 
-h2 {
-  font-size: 1.8rem;
-  margin-top: 40px;
-}
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
 
-ul {
-  margin-top: 0;
-  margin-bottom: 20px;
-  list-style: none;
-  padding-left: 0;
-}
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
 
-li {
-  margin-bottom: 10px;
-}
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+    }
 
-p {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
+    ul {
+      margin-top: 0;
+      margin-bottom: 20px;
+      list-style: none;
+      padding-left: 0;
+    }
 
-a {
-  color: #007bff;
-  text-decoration: none;
-}
+    li {
+      margin-bottom: 10px;
+    }
 
-a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
+    p {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
 </style>
 
 
@@ -91,9 +97,23 @@ a:hover {
       <h2>Changes to Privacy Policy</h2>
       <p>We may update this Privacy Policy from time to time. If we make any material changes,
         we will notify you by posting the updated Privacy Policy on our website.</p>
+        <div class="container">
+          <!-- Privacy Policy content -->
+
+          
+      
+              <input type="checkbox" id="agree" name="agree" required>
+              <label for="agree">I agree to the GestureGo's privacy policy </label>
+              <br>
+              <a href={% url 'login' %}> <button class="acceptBtn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Accept
+              </button> </a>
+
+        </div>
+
         
         </div>
         
           </body>
 
-{% endblock %}
+

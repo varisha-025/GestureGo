@@ -26,8 +26,7 @@ def registerUser(request):
             form = UserCreationForm()
         context = {'form':form}
         return render(request, 'register.html', context)
- 
-   
+
 def loginUser(request):
     if request.user.is_authenticated:
         return redirect('/')
@@ -45,17 +44,24 @@ def loginUser(request):
                 messages.error(request, 'Wrong username or password')
                 return render(request,'login.html')
         return render(request,'login.html')
-    
-
-
-def home(request):
-    return render(request, 'home.html')
-
-def privacy(request):
-    return render(request,'privacy.html')
 
 @login_required(login_url='login')
 def logoutUser(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("login")
+  
+def privacy(request):
+    return render(request,'privacy.html')
+
+def translation(request):
+    return render(request, 'translation.html')
+
+def menu(request):
+    return render(request, 'layout/menu.html')
+
+def text_to_speech(request):
+    return render(request, 'text_to_speech.html')
+
+def home(request):
+    return render(request, 'layout/home.html')

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 {% load static %}
 {% block start %}
 <head>
@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    {% comment %} <link rel="stylesheet" href="{% static 'style.css' %}"> {% endcomment %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     
     <style>
@@ -95,7 +92,7 @@
             margin-top:20px;
             color: black;
           }
-          register a {
+          .register a {
             
             color: #e11d48;
           }
@@ -111,12 +108,12 @@
 
 <body>
     
-    <div id="login" class="form  " data-aos="zoom-in-up" data-aos-duration="12000">
+    <div id="login" class="form" data-aos="zoom-in-up" data-aos-duration="12000">
        
         <h2> Login</h2>
         
 
-        <form method="POST" action="/login">
+        <form method="POST" action="login/">
             {% csrf_token %}
             
             <div class="input">
@@ -135,7 +132,7 @@
         </form>
             
             <p class="register hover:font-semibold  focus:font-semibold ">Don't have an account? <a class="text-rose-600 " href="/register">Register</a></p>
-            {% comment %} <p class="forget"><a href="/admin">Administrator Login</a></p> {% endcomment %}
+
     </div>
 </div class="login-page">
 
