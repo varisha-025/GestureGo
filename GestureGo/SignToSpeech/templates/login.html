@@ -113,7 +113,7 @@
         <h2> Login</h2>
         
 
-        <form method="POST" action="login/">
+        <form method="POST" action="">
             {% csrf_token %}
             
             <div class="input">
@@ -126,7 +126,7 @@
                     <input type="password" name="pass" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="login" class="btn btn-info btn-lg"> <a data-mdb-ripple="true" data-mdb-ripple-color="light" href="menu" role="button"></a></input>
+                    <input type="submit" value="Login" class="btn btn-info btn-lg"> <a data-mdb-ripple="true" data-mdb-ripple-color="light" href="/menu" role="button"></a></input>
                 </div>
             </div>
         </form>

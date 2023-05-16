@@ -4171,6 +4171,7 @@
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
+    padding-bottom: 100px;
   }
   
   .navbar-brand:hover, .navbar-brand:focus {
