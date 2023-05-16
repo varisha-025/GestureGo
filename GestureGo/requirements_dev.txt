@@ -7,3 +7,4 @@ pyttsx3==2.90
 SpeechRecognition==3.10.0
 gTTS==2.3.1
 PyAudio==0.2.13
+nltk==3.8.1
