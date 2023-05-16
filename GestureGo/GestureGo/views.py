@@ -53,6 +53,8 @@ def logoutUser(request):
   
 def privacy(request):
     return render(request,'privacy.html')
+def asl(request):
+    return render(request,'asl.html')
 
 def translation(request):
     return render(request, 'translation.html')
