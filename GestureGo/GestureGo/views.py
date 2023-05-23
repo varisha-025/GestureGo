@@ -1,46 +1,74 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 
 from django.shortcuts import redirect, render
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login,logout
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
+from django.contrib.auth.models import User
 from django.contrib.staticfiles import finders
-
-
-def registerUser(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request,user)
-            # log the user in
-            return redirect('animation')
-    else:
-        form = UserCreationForm()
-    return render(request,'register.html',{'form':form})
+from SignToSpeech.forms import RegisterForm, LoginForm
 
 
 def loginUser(request):
-	if request.method == 'POST':
-		form = AuthenticationForm(data=request.POST)
-		if form.is_valid():
-			#log in user
-			user = form.get_user()
-			login(request,user)
-			if 'next' in request.POST:
-				return redirect(request.POST.get('next'))
-			else:
-				return redirect('animation')
-	else:
-		form = AuthenticationForm()
-	return render(request,'login.html',{'form':form})
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            return redirect("home")
+        form = LoginForm()
+        return render(request, "login.html", {"form": form})
+    elif request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            print("valid")
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password"]
+
+            user = authenticate(username=username, password=password)
+            if user:
+                print("login")
+                login(request, user)
+                return redirect("menu")
+            else:
+                messages.error(request, "Invalid username or password")
+                return redirect("home")
+
+        print(form.errors)
+        return render(request, 'login.html', {"form": form})
+    else:
+        return redirect("login")
+
+def registerUser(request):
+    form = RegisterForm(request.POST)
+    if request.method == "POST":
+        print("post")
+        if form.is_valid():
+            print("valid")
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password1"]
+            email = form.cleaned_data["email"]
+
+            if User.objects.filter(username=username).exists():
+                messages.error(request, "Username already exists")
+                return redirect("register")
+
+            if User.objects.filter(email=email).exists():
+                messages.error(request, "Email already exists")
+                return redirect("register")
+
+            user = User.objects.create_user(username=username, password=password, email=email)
+            user.save()
+            print("user created")
+            login(request, user)
+            messages.success(request, "Account created successfully")
+            return redirect("login")
+        print("invalid")
+        print(form.errors)
+    else:
+        return render(request, "register.html", {"form": form})
+        
 
 def logoutUser(request):
     logout(request)
