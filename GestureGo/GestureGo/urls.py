@@ -26,7 +26,7 @@ urlpatterns = [
     path("menu/", views.menu, name="menu"),
     path("signtospeech/",include("SignToSpeech.urls")),
     path("text_to_speech/",views.text_to_speech,name="text_to_speech"),
-    path("speech_to_sign/",views.speech_to_sign, name="speech_to_sign"),
+    # path("speech_to_sign/",views.speech_to_sign, name="speech_to_sign"),
 
     path("login/",views.loginUser,name="login"),
     path("logout/",views.logoutUser,name="logout"),

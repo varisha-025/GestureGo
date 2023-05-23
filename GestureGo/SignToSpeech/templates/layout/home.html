@@ -48,14 +48,14 @@
                 <div id="myNav" class="overlay">
                   <div class="overlay-content">
                     <a href={% url 'asl'%}>ASL Chart</a>
-                    <a href={% url 'speech_to_sign'%}>Speech to Sign</a>
+                    {% comment %} <a href={% url 'speech_to_sign'%}>Speech to Sign</a> {% endcomment %}
                     <a href={% url 'text_to_speech'%}>Text to Speech</a>
                     {% if request.session.login %}
                         <!-- Display login button and register button -->
                         <a href={% url 'logout'%}>Logout</a>
                     {% else %}
                         <!-- Display logout button -->
-                        <a href={% url 'login'%}>Login</a>
+                        <a href={% url 'login' %}>Login</a>
                         <a href={% url 'register'%}>Register</a>
                         
                        
