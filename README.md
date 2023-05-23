@@ -21,8 +21,8 @@ We propose a web application, GestureGo, which will facilitate bidirectional com
 ## Tech stack
 
 - **FrontEnd:** [Django](https://www.djangoproject.com/) and [Tailwind CSS](https://tailwindcss.com/)
-- **Other libraries:** [Tensorflow](https://www.tensorflow.org/), Pyaudio, Docker, Google Cloud Translator API
-- **Version Control and Hosting:** [Git](https://git-scm.com/) for Source Code Management and [Netlify](https://netlify.com) for hosting
+- **Other libraries:** [Tensorflow](https://www.tensorflow.org/), Pyaudio, Javascript Webspeech API
+- **Version Control and Hosting:** [Git](https://git-scm.com/) for Source Code Management
 
 ## Local Setup
 
