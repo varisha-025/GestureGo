@@ -107,7 +107,7 @@
         <h2 class= "mb-12 mt-1 pb-1 text-xl font-semibold"> Register</h2>
         
       
-        <form method="POST" action="" >
+        <form action="/" method="POST">
             {% csrf_token %}
             <div class="input">
               <div class="inputBox">
@@ -126,6 +126,8 @@
                 <label></label>
                 <input type="password" name="password2" for="password2" class="form-control" placeholder="Re-enter password" required>
             </div>
+            
+
                 <br>
                 <input type="checkbox" id="agree" name="agree" required>
                 <label for="agree">I agree to the<a href={% url 'privacy' %} id="privacy">Privacy Policy</a> </label>
